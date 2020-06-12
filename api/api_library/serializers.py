@@ -14,4 +14,4 @@ class GroupedBookSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Book
-        fields = ["title", "author", "recommenders", "amazon_link", "description", "book_type", "genre", "length", "publish_year", "on_list", "review_excerpt"]
+        fields = ["title", "author", "recommenders", "description", "book_type", "genre", "length", "publish_year", 'review_excerpt']

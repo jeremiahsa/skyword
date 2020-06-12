@@ -28,8 +28,11 @@ class FilteredBookViewSet(viewsets.ModelViewSet):
         author = self.request.query_params.get('author', None)
         queryset = models.Book.objects.all()
         if count is not None:
-            queryset = queryset.filter(count=count).values('title', 'count', 'author', 'source', 'recommender', 'amazon_link', 'description').annotate(recommenders=Count('recommender'))
+            #queryset = queryset.annotate(recommenders=Count('recommender')).values('title', 'author', 'source', 'recommenders', 'amazon_link', 'description').filter(recommenders==recommenders).distinct()
+            queryset = queryset.values('author', 'title', 'description', 'book_type', 'genre', 'length', 'publish_year').annotate(recommenders=Count('recommender')).filter(recommenders=count)
+            #queryset = queryset.annotate(recommenders=count_status)
             return queryset
         else:
-            queryset = queryset.filter(author=author).values('title', 'author', 'amazon_link', 'description', 'book_type', 'genre', 'length', 'publish_year', 'on_list', 'review_excerpt').annotate(recommenders=Count('recommender'))
+            #queryset = queryset.filter(author=author).values('title', 'author', 'amazon_link', 'description', 'book_type', 'genre', 'length', 'publish_year', 'on_list', 'review_excerpt').annotate(recommenders=Count('recommender'))
+            queryset = queryset.values('title', 'author', 'description', 'book_type', 'genre', 'length', 'publish_year', 'review_excerpt').annotate(recommenders=Count('recommender')).filter(author=author)
             return queryset
