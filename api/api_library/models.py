@@ -8,7 +8,7 @@ class Book(models.Model):
     amazon_link=models.TextField()
     description=models.TextField()
     book_type=models.TextField()
-    genrer=models.TextField()
+    genre=models.TextField()
     length=models.IntegerField()
     publish_year=models.IntegerField()
     on_list=models.TextField()
