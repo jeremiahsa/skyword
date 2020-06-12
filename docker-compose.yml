@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+######################################################################
+# Postgres Server (using SQLLite, but postgres is probably good, too)
+######################################################################
+#  db:
+#    image: postgres
+#    environment: 
+#      - POSTGRES_DB=postgres
+#      - POSTGRES_USER=postgres
+#      - POSTGRES_PASSWORD=postgres
+##################
+# API Server
+##################
+  api:
+    build: ./api
+    command: python3 manage.py runserver 0.0.0.0:${APP_SERVER_PORT}
+    volumes:
+      - ./api:/api
+    ports:
+      - ${APP_SERVER_PORT}:${APP_SERVER_PORT}
+    #depends_on:
+    # - db
+###################
+# Client Container
+####################
+  frontend:
+    build: ./frontend
+    environment: 
+      #- REACT_APP_PORT=3000
+      - NODE_ENV=development
+    stdin_open: true
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - 3000:3000 #${REACT_APP_PORT}:${REACT_APP_PORT}
+    depends_on:
+      - api
+    command: npm start
