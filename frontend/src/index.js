@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { BookContextProvider } from './themeContext';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BookContextProvider>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </BookContextProvider>,
+
   document.getElementById('root')
 );
 

@@ -12,7 +12,17 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.tableRow {
+  text-align: left;
+}
+.bookFilter {
+  padding-top: 1vw;
+  padding-bottom: 2vw;
+  background-color: #61dafb;
+}
+.col3 {
+  width: 33%;
+}
 .App-header {
   background-color: #282c34;
   min-height: 10vh;
