@@ -1,0 +1,12 @@
+
+api/__pycache__/database_import.cpython-38.pyc
+api/api_library/__pycache__/models.cpython-38.pyc
+api/api_library/__pycache__/serializers.cpython-38.pyc
+api/api_library/__pycache__/settings.cpython-38.pyc
+api/api_library/__pycache__/urls.cpython-38.pyc
+api/api_library/__pycache__/views.cpython-38.pyc
+api/api_library/migrations/0002_auto_20200612_0343.py
+api/api_library/migrations/__pycache__/0002_auto_20200612_0343.cpython-38.pyc
+*.pyc
+*.pyc
+*.pyc

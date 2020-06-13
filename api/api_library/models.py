@@ -1,7 +1,7 @@
 from django.db import models
 
 class Book(models.Model):
-    title=models.CharField(max_length=30)
+    title=models.CharField(max_length=256)
     author=models.CharField(max_length=100)
     recommender=models.CharField(max_length=100)
     source=models.TextField()
