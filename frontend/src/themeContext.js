@@ -37,7 +37,9 @@ class BookContextProvider extends Component {
         fetch('/books.json')
         .then(res => res.json())
         .then(data => {
-            this.setState({books: data});
+            this.setState({
+                books: data
+            });
         })
         .catch(console.log)
     }

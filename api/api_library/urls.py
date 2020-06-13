@@ -22,10 +22,10 @@ from . import views
 
 router = routers.DefaultRouter()
 router.register(r'books', views.BookViewSet)
+router.register(r'reviewers', views.ReviewersViewSet)
 router.register(r'book', views.FilteredBookViewSet, basename='ooks')
 
 urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
-    re_path(".*", TemplateView.as_view(template_name="index.html")),
 ]
