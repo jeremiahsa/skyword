@@ -28,4 +28,7 @@ router.register(r'book', views.FilteredBookViewSet, basename='ooks')
 urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
+    url('^auth/register/$', views.RegistrationAPI.as_view()),
+    url('^auth/login/$', views.LoginAPI.as_view()),
+    url(r'^auth/', include('knox.urls')),
 ]

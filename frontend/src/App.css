@@ -20,8 +20,38 @@
   padding-bottom: 2vw;
   background-color: #61dafb;
 }
-.col3 {
-  width: 33%;
+button {
+  border-radius: 5px;
+  border: 2px;
+  margin: 3px;
+}
+.saveButton {
+  border-radius: 4px;
+  border: 1px solid #61dafb !important;
+}
+label {
+  padding-right: 2vw;
+}
+.ToggleMenu {
+  margin-top: 3vw;
+}
+.selected {
+  background-color: #61dafb;
+}
+.deselected {
+  background-color: lightgray;
+}
+.ToggleMenu button {
+  margin-left: 4px;
+  margin-right: 4px;
+  width: 90%;
+  border-radius: 10px 10px 0 0;
+}
+.register {
+  font-size: 2vw;
+  margin: 3px;
+  border: 1px;
+  border-radius: 5px;
 }
 .App-header {
   background-color: #282c34;

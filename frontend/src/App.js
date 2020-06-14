@@ -2,6 +2,7 @@ import React from 'react';
 import Book from './Book';
 import BookSearch from './BookSearch';
 import MyList from './MyList';
+import Register from './Register';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css'
 
@@ -23,7 +24,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>Book Recommendation Master List</p>
-        <MyList />
+        <div className="container"><MyList /></div>
       </header>
       <div className="container">
         <BookSearch />

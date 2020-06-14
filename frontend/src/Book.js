@@ -21,7 +21,7 @@ function Book(props) {
                   <tr key={"book"+index}>
                     <td key={"booktitle_"+index} >{book.title}</td>
                     <td key={"bookauthor_"+index} >{book.author}</td>
-                    <td key={"booksave_"+index} ><button onClick={() => {context.addBookToShelf(book.title, book.author)}}>Save</button></td>
+                    <td key={"booksave_"+index} ><button className="saveButton" onClick={() => {context.addBookToShelf(book.book_id)}}>Save</button></td>
                   </tr>
                 ))}
               </tbody>

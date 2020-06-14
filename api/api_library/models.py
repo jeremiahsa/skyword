@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Book(models.Model):
     title=models.CharField(max_length=256)
@@ -16,10 +17,12 @@ class Book(models.Model):
     def __str__(self):
         return '%s: %s' % (self.title, self.author)
 
-
 class Reviewer(models.Model):
-    book = models.ForeignKey(Book, related_name='reviewers', on_delete=models.CASCADE)
-    name = models.CharField(max_length=100)
-
+    books = models.ManyToManyField(Book, related_name='reviewers', related_query_name='reviewers')
+    user = models.ForeignKey(User, related_name='books', on_delete=models.CASCADE, null=True)
     def __str__(self):
-        return '%s' % (self.name)
+        return '%s' % (self.user)
+
+#class ReviewerBooks(models.Model):
+#    book = models.ForeignKey(Book, related_name="reviewerList", on_delete=models.CASCADE)
+#    reviewer_name = models.ForeignKey(Reviewer, related_name="reviewer", on_delete=models.CASCADE)
